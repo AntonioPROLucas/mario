@@ -1,0 +1,129 @@
+body{
+    font-family: "Press Start 2P", cursive;
+    background-color: rgb(68, 37, 2);
+}
+.background{
+    content: "";
+    background-image: url(../img/Background.png);
+    background-size: contain;
+    width: 1200vh;
+    height: 115vh;
+    position: absolute;
+    bottom: 20%;
+    z-index: 1;
+    opacity: 1.0;
+    animation: background-animation 35s infinite linear;
+}
+.game-board{
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+}
+
+.mario{
+    width: 150px;
+    position:absolute;
+    bottom: 0;
+    z-index: 2;
+}
+
+.jump{
+    animation: jump 500ms ease-out;
+}
+
+.pipe{
+    position: absolute;
+    bottom: 0;
+    width: 120px;
+    animation: pipe-animation 1.8s infinite linear;
+    z-index: 2;
+}
+
+.boo{
+    position: absolute;
+    bottom: 180px;
+    width: 185px;
+    right: -300px;
+    z-index: 2;  
+}
+
+.score {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #fff;
+    z-index: 2;
+    }
+
+.game-over{
+    position: relative;
+    z-index: 3;
+    bottom: -120px;
+    right: -2000px;
+}
+
+.game-over .endgame{
+    position: relative;
+    z-index: 3;
+}
+
+.game-over .button{
+    position: relative;
+    width: 120px;
+    padding: 5px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    z-index: 3;
+    right: 5px;
+}
+.restart-text{
+    font-family: "Press Start 2P", cursive;
+}
+
+@keyframes jump{
+    0%{
+        bottom : 0;
+    }
+    40%{
+        bottom : 180px;
+    }
+    50%{
+        bottom : 180px;
+    }
+    60%{
+        bottom : 180px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+@keyframes pipe-animation{
+    from{
+        right: -115px;
+    }
+    to{
+        right: 100%;
+    }
+}
+@keyframes boo-animation{
+    from{
+        right: -400px;
+    }
+    to{
+        right: 100%;
+    }
+}
+@keyframes background-animation{
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-75%);
+    }
+}
